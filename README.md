@@ -1,36 +1,28 @@
-# Jquery::Modal::Rails::Assets
+# jQuery Modal for Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jquery/modal/rails/assets`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem vendors the jQuery Modal assets for Rails 3.1 and greater.
+The files will be added to the asset pipeline and available for you to use.
 
-TODO: Delete this and the text above, and describe your gem
+For info on how to use jQuery Modal or get the unmodified asset files visit:
 
-## Installation
+[jQuery modal](https://github.com/kylefox/jquery-modal)
 
-Add this line to your application's Gemfile:
+## Using the gem
+
+In your Gemfile add:
 
 ```ruby
 gem 'jquery-modal-rails-assets'
 ```
 
-And then execute:
+You can then include it in your app by adding the following to your javascript application file:
 
-    $ bundle
+```javascript
+//= require jquery.modal
+```
 
-Or install it yourself as:
+And to the css application file:
 
-    $ gem install jquery-modal-rails-assets
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jquery-modal-rails-assets.
-
+```css
+ *= require jquery.modal
+```
