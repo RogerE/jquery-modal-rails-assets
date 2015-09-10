@@ -1,9 +1,3 @@
-module Jquery
-  module Modal
-    module Rails
-      module Assets
-        VERSION = "0.1.0"
-      end
-    end
-  end
+module JqueryModalRailsAssets
+  VERSION = "0.5.5"
 end
