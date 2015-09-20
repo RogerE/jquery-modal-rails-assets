@@ -1,3 +1,3 @@
 module JqueryModalRailsAssets
-  VERSION = "0.5.5"
+  VERSION = "0.5.8"
 end
