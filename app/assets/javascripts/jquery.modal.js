@@ -1,6 +1,6 @@
 /*
     A simple jQuery modal (http://github.com/kylefox/jquery-modal)
-    Version 0.5.9
+    Version 0.5.10
 */
 (function($) {
 
@@ -129,7 +129,7 @@
           _this.$elm.trigger($.modal.AFTER_CLOSE, [_this._ctx()]);
         });
       } else {
-        this.$elm.hide(function () {
+        this.$elm.hide(0, function () {
           _this.$elm.trigger($.modal.AFTER_CLOSE, [_this._ctx()]);
         });
       }
