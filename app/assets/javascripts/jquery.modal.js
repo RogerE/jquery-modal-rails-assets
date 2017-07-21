@@ -1,6 +1,6 @@
 /*
     A simple jQuery modal (http://github.com/kylefox/jquery-modal)
-    Version 0.8.0
+    Version 0.8.1
 */
 
 (function (factory) {
@@ -178,7 +178,7 @@
 
     //Return context for custom events
     _ctx: function() {
-      return { elm: this.$elm, $blocker: this.$blocker, options: this.options };
+      return { elm: this.$elm, $elm: this.$elm, $blocker: this.$blocker, options: this.options };
     }
   };
 
@@ -232,8 +232,8 @@
   };
 
   // Automatically bind links with rel="modal:close" to, well, close the modal.
-  $(document).on('click.modal', 'a[rel="modal:close"]', $.modal.close);
-  $(document).on('click.modal', 'a[rel="modal:open"]', function(event) {
+  $(document).on('click.modal', 'a[rel~="modal:close"]', $.modal.close);
+  $(document).on('click.modal', 'a[rel~="modal:open"]', function(event) {
     event.preventDefault();
     $(this).modal();
   });
