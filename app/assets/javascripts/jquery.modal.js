@@ -1,6 +1,6 @@
 /*
     A simple jQuery modal (http://github.com/kylefox/jquery-modal)
-    Version 0.8.2
+    Version 0.9.0
 */
 
 (function (factory) {
@@ -41,6 +41,7 @@
     modals.push(this);
     if (el.is('a')) {
       target = el.attr('href');
+      this.anchor = el;
       //Select element by id from href
       if (/^#/.test(target)) {
         this.$elm = $(target);
@@ -83,6 +84,7 @@
     open: function() {
       var m = this;
       this.block();
+      this.anchor.blur();
       if(this.options.doFade) {
         setTimeout(function() {
           m.show();
@@ -92,11 +94,11 @@
       }
       $(document).off('keydown.modal').on('keydown.modal', function(event) {
         var current = getCurrent();
-        if (event.which == 27 && current.options.escapeClose) current.close();
+        if (event.which === 27 && current.options.escapeClose) current.close();
       });
       if (this.options.clickClose)
         this.$blocker.click(function(e) {
-          if (e.target==this)
+          if (e.target === this)
             $.modal.close();
         });
     },
@@ -193,7 +195,7 @@
   // Returns if there currently is an active modal
   $.modal.isActive = function () {
     return modals.length > 0;
-  }
+  };
 
   $.modal.getCurrent = getCurrent;
 
@@ -205,7 +207,7 @@
     closeClass: '',
     modalClass: "modal",
     blockerClass: "jquery-modal",
-    spinnerHtml: null,
+    spinnerHtml: '<div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div>',
     showSpinner: true,
     showClose: true,
     fadeDuration: null,   // Number of milliseconds the fade animation takes.
