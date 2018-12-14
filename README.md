@@ -1,4 +1,8 @@
-# jQuery Modal for Rails
+# THIS GEM IS NO LONGER UPDATED
+
+If you require newer versions of the asset files you can do 'yarn add jquery-modal' or download them from the [Github repository](https://github.com/kylefox/jquery-modal).
+
+## Intro
 
 This gem vendors the jQuery Modal assets for Rails 3.1 and greater.
 The files will be added to the asset pipeline and available for you to use.
